@@ -1,0 +1,26 @@
+{
+  "name": "jquery-iframeshim",
+  "version": "0.1.0",
+  "homepage": "https://github.com/alexcheng1982/jquery-iframeshim",
+  "authors": [
+    "Fu Cheng <alexcheng1982@gmail.com>"
+  ],
+  "description": "jQuery plugin to create iframe shim",
+  "main": "jquery-iframeshim.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "jquery",
+    "iframe",
+    "shim"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

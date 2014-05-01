@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery iframe shim test page</title>
+  <link rel="stylesheet" href="jquery-iframeshim.css">
+  <style>
+    #map3d {
+      width: 100%;
+      height: 100%;
+    }
+
+    .shim1 {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      color: #f00;
+    }
+
+    .shim2 {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      color: #ff0;
+    }
+  </style>
+</head>
+<body>
+  <div id="map3d"></div>
+  <div id="banner1">
+    <h3>Sample banner</h3>
+  </div>
+  <div id="banner2">
+    <h3>Another banner</h3>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="jquery-iframeshim.js"></script>
+  <script src="https://www.google.com/jsapi"></script>
+  <script>
+    var ge;
+    google.load("earth", "1", { "sensor": false });
+
+    function init() {
+      google.earth.createInstance('map3d', initCB, failureCB);
+    }
+
+    function initCB(instance) {
+      ge = instance;
+      ge.getWindow().setVisibility(true);
+    }
+
+    function failureCB(errorCode) {
+    }
+
+    google.setOnLoadCallback(init);
+    $(function() {
+      $('#banner1').iframeShim({
+        classNames: 'shim1'
+      });
+      $('#banner2').iframeShim({
+        classNames: 'shim2'
+      });
+    });
+  </script>
+</body>
+</html>

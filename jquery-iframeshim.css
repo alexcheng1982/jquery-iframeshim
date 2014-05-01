@@ -1,0 +1,21 @@
+.iframeshim-container {
+  z-index: 100;
+  position: relative;
+}
+
+.iframeshim-container .content-container {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.iframeshim-container .shim-iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10000;
+}
